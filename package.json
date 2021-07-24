@@ -1,0 +1,16 @@
+{
+  "name": "node-prisma-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:danielccunha/node-prisma-example.git",
+  "author": "Daniel Cunha <danielcunha54@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsnd --quiet --respawn --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  }
+}

@@ -4,5 +4,23 @@ datasource db {
 }
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client-js" 
+}
+
+model User {
+  @@map("users")
+  id Int @default(autoincrement()) @id
+  username String @db.VarChar(255) @unique
+  posts Post[]
+}
+
+model Post {
+  @@map("posts")
+  id Int @default(autoincrement()) @id
+  user_id Int
+  title String
+  post String @db.VarChar(500)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  user User @relation(fields: [user_id], references: [id])
 }
